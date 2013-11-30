@@ -8,9 +8,23 @@
     <!--参考：http://docs.spring.io/spring/docs/3.2.5.RELEASE/spring-framework-reference/htmlsingle/ -->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <!--参考PropertiesLoaderSupport类-->
+        <property name="locations">
+            <list>
+                <value>constants.properties</value>
+            </list>
+        </property>
+        <!--
         <property name="location">
             <value>constants.properties</value>
         </property>
+        -->
+        <!--占位符也可以自己指定-->
+       <!-- <property name="placeholderPrefix">
+            <value>$(</value>
+        </property>
+        <property name="placeholderSuffix">
+            <value>)</value>
+        </property>  -->
     </bean>
 
     <bean id="helloWorldBean"
